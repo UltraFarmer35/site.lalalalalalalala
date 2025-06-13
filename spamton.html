@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>spamton.g.spamton</title>
+	<link rel="icon" href="\SporeIndustries/images/logo.svg">
+</head>
+<body>
+	<style>
+		body{
+			background-image: url(https://unblast.com/wp-content/uploads/2021/01/Space-Background-Images.jpg);
+    		background-size: cover;
+    		background-repeat: no-repeat;
+    		background-attachment: fixed;
+    		text-align: center;
+		}
+		.wrong{
+			color: red;
+			font-family: Impact;
+			float: center;
+		}
+		.right{
+			color: limegreen;
+			font-family: Impact;
+			float: center;
+		}
+		div{
+			background-color:rgba(0, 0, 0, 0.7);
+			border:4px solid rgba(130, 73, 245, 0.9);
+			border-radius: 5px;
+    		height:auto;
+    		width: 500px;
+    		margin: auto;
+    		margin-top: 15%;
+    		text-align: center;
+    		font-size: 25px;
+    		padding: 1em;
+		}
+	</style>	
+	<script>
+        function hasSpamWords() {
+  const userText = prompt("Введіть текст:","Безкоштовно");
+  
+  if (userText === null) {
+    return false; 
+  }
+
+  const lowerCaseText = userText.toLowerCase();
+  return lowerCaseText.includes("безкоштовно") || lowerCaseText.includes("гарантія")|| lowerCaseText.includes("спам")|| lowerCaseText.includes("spam")|| lowerCaseText.includes("garantiya");
+}
+
+
+const containsSpam = hasSpamWords();
+
+if (containsSpam) {
+  document.write(`<div><p class="wrong">Текст містить слова 'безкоштовно', 'спам' або 'гарантія'. Це спам</P></div>`);
+} else {
+  document.write(`<div><p class="right">Текст не містить спамових слів.</p></div>`);
+}
+
+
+    </script>
+</body>
+</html>

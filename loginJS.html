@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>login.com</title>
+	<link rel="icon" href="\SporeIndustries/images/logo.svg">
+</head>
+<body>
+	<style>
+		body{
+			background-image: url(https://unblast.com/wp-content/uploads/2021/01/Space-Background-Images.jpg);
+    		background-size: cover;
+    		background-repeat: no-repeat;
+    		background-attachment: fixed;
+    		text-align: center;
+		}
+		.wrong{
+			color: red;
+			font-family: Impact;
+			float: center;
+		}
+		.right{
+			color: limegreen;
+			font-family: Impact;
+			float: center;
+		}
+		div{
+			background-color:rgba(0, 0, 0, 0.7);
+			border:4px solid rgba(130, 73, 245, 0.9);
+			border-radius: 5px;
+    		height:200px;
+    		width: 350px;
+    		margin: auto;
+    		margin-top: 15%;
+    		text-align: center;
+    		font-size: 30px;
+    		padding: 1em;
+		}
+	</style>
+<div align="center">
+	<p id="atext"></p>
+</div>	
+	<script>
+			let user = prompt(`Введіть ім'я користувача`,"Userpro2010");
+			if (user == "Userpro2010"){
+				let password = prompt("Введіть пароль","nword");
+					if (password == "nword") {
+						document.getElementById("atext").innerHTML = `<p class="right">Вітаю вас Userpro2010</p>`;
+					}else if (password != "nword"){
+						document.getElementById("atext").innerHTML = `<p class="wrong">Ви ввелии невірний пароль, цей пристрій буде самознищено через 30 секунд!</p>`;
+				} 
+			}
+			else if (user == null){
+				document.getElementById("atext").innerHTML = `<p class="wrong">Ти гадаєш, що ти тут найрозумніший?</p>`;
+			}else if (user != "Userpro2010"){
+				document.getElementById("atext").innerHTML = `<p class="wrong">Ви ввелии невірний логін, цей пристрій буде самознищено через 30 секунд!</p>`;
+			}
+	</script>
+</body>
+</html>

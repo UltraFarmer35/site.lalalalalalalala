@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<style>
+		body{
+			background-image: url(https://unblast.com/wp-content/uploads/2021/01/Space-Background-Images.jpg);
+    		background-size: cover;
+    		background-repeat: no-repeat;
+    		background-attachment: fixed;
+    		text-align: center;
+		}
+		.wrong{
+			color: red;
+			font-family: Impact;
+			float: center;
+		}
+		.right{
+			color: limegreen;
+			font-family: Impact;
+			float: center;
+		}
+		div{
+			background-color:rgba(0, 0, 0, 0.7);
+			border:4px solid rgba(130, 73, 245, 0.9);
+			border-radius: 5px;
+    		height:200px;
+    		width: 350px;
+    		margin: auto;
+    		margin-top: 15%;
+    		text-align: center;
+    		font-size: 30px;
+    		padding: 1em;
+		}
+	</style>
+<div align="center">
+	<p id="atext"></p>
+</div>
+	<script>
+		alert(`Привіт.Твоя задача, вгдати випадкове число на проміжку, який ти встановиш. У тебе всього 10 спро, або папка "Windows32" буде видалена`);
+		let min	= +prompt('введіть мінімальне число','0');
+		let max = +prompt('введіть максимальне число','100');
+		let num;
+		let count = 0;
+		let answer = min+Math.floor(Math.random()*(max-min+1));
+			do {
+				num = prompt("Введіть число"); 
+				count++;
+			if (num == null){
+				alert("null")
+			}else if (num > answer){
+				alert("забагато")
+			}else if(num < answer){
+				alert("замало")
+			}else if(num == answer){
+				document.getElementById("atext").innerHTML = `<p class="right">вгадав, ти витратив ${count} спроби</p>`;
+			}else{
+				document.getElementById("atext").innerHTML = `<p class="wrong">ти програв, видаляю папку.</p>`;
+			}
+		}while (num != answer && count !== 10 && num != null);					
+	</script>
+</body>
+</html>

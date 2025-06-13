@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>saliaries.ua</title>
+	<link rel="icon" href="\SporeIndustries/images/logo.svg">
+</head>
+<body>
+	<style>
+		body{
+			background-image: url(https://unblast.com/wp-content/uploads/2021/01/Space-Background-Images.jpg);
+    		background-size: cover;
+    		background-repeat: no-repeat;
+    		background-attachment: fixed;
+    		text-align: center;
+		}
+		.wrong{
+			color: red;
+			font-family: Impact;
+			float: center;
+		}
+		.right{
+			color: limegreen;
+			font-family: Impact;
+			float: center;
+		}
+		div{
+			background-color:rgba(0, 0, 0, 0.7);
+			border:4px solid rgba(130, 73, 245, 0.9);
+			border-radius: 5px;
+    		height:auto;
+    		width: 500px;
+    		margin: auto;
+    		margin-top: 15%;
+    		text-align: center;
+    		font-size: 25px;
+    		padding: 1em;
+		}
+	</style>	
+<div align="center">
+	<p id="atext" class="right"></p>
+	<p id="btext" class="right"></p>	
+</div>
+	<script>
+		let salaries = {
+  			"Василь": 10000,
+  			"Петро": 30000,
+  			"Дарина": 25000,
+  			"Андрій":18500, 
+			"Олена":23200, 
+			"Максим":15750, 
+			"Катерина":19600, 
+			"Дмитро":35200, 
+			"Ірина":7800, 
+			"Сергій":16900, 
+			"Наталія":30000, 
+			"Юрій":20800, 
+			"Марина":22750};
+		let max=0;
+		let min=Infinity;
+		let minName="";
+		let maxName="";
+		let sum=0;
+		let nameList="";
+		let output = document.getElementById("btext");
+		for (let name in salaries) {
+  			let data = salaries[name];
+  			sum += data;
+
+  			if (data > max) {
+  				max = data;
+  				maxName = name;
+ 			}
+
+  			if (data < min) {
+  				min = data;
+    			minName = name;
+ 			}
+
+ 				nameList += `${name} ${data}<br>`;
+			}
+
+			document.getElementById("atext").innerHTML = `Сума зарплат: ${sum}<br>Найменша зарплата у ${minName} — ${min} грн<br>Найбільша зарплата у ${maxName} — ${max} грн`;
+
+			document.getElementById("btext").innerHTML = `Список співробітників:<br> `+nameList;
+		
+	</script>
+</body>
+</html>

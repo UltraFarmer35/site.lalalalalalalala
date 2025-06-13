@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="icon" href="\SporeIndustries/images/logo.svg">
+</head>
+<body>
+	<style>
+		body{
+			background-image: url(https://unblast.com/wp-content/uploads/2021/01/Space-Background-Images.jpg);
+    		background-size: cover;
+    		background-repeat: no-repeat;
+    		background-attachment: fixed;
+    		text-align: center;
+		}
+		.wrong{
+			color: red;
+			font-family: Impact;
+			float: center;
+		}
+		.right{
+			color: limegreen;
+			font-family: Impact;
+			float: center;
+		}
+		.mainText{
+			color:rgb(255, 255, 255);
+			font-family: Impact;
+			float: center;
+		}
+		div{
+			background-color:rgba(0, 0, 0, 0.7);
+			border:4px solid rgba(130, 73, 245, 0.9);
+			border-radius: 5px;
+    		height:auto;
+    		width: 500px;
+    		margin: auto;
+    		margin-top: 15%;
+    		text-align: center;
+    		font-size: 25px;
+    		padding: 1em;
+		}
+	</style>
+<h1 class="mainText">Розрахунок коренів дискримінанта</h1>
+<div align="center">
+	<p id="atext" class="right"></p>
+	<p id="btext" class="right">ax² + bx + c = 0<br>D = b² - 4ac</p>	
+</div>	
+	<script>
+		let a = +prompt("введіть число a","");
+		let b = +prompt("введіть число b","");
+		let c = +prompt("введіть число c","");
+		let D = (b*b)-4*a*c;
+		let x1 = (-b+Math.sqrt(D))/(2*a);
+	let x2 = (-b-Math.sqrt(D))/(2*a);
+
+	if (D > 0) {
+	document.getElementById("atext").innerHTML =`корені: ${x1}, ${x2}`;
+	} else if (D == 0) {
+	document.getElementById("atext").innerHTML =`корінь: ${x1}`;
+	} else if (D < 0) {
+	document.getElementById("atext").innerHTML ="немає коренів";
+	} else {
+	document.getElementById("atext").innerHTML ="щось не так";
+	}
+	</script>
+</body>
+</html>

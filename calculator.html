@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="icon" href="\SporeIndustries/images/logo.svg">
+</head>
+<body>
+<style>
+		body{
+			background-image: url(https://unblast.com/wp-content/uploads/2021/01/Space-Background-Images.jpg);
+    		background-size: cover;
+    		background-repeat: no-repeat;
+    		background-attachment: fixed;
+    		text-align: center;
+		}
+		.wrong{
+			color: red;
+			font-family: Impact;
+			float: center;
+		}
+		.right{
+			color: limegreen;
+			font-family: Impact;
+			float: center;
+		}
+		div{
+			background-color:rgba(0, 0, 0, 0.7);
+			border:4px solid rgba(130, 73, 245, 0.9);
+			border-radius: 5px;
+    		height:auto;
+    		width: 200px;
+    		margin: auto;
+    		margin-top: 15%;
+    		text-align: center;
+    		font-size: 25px;
+    		padding: 1em;
+		}
+		.imgM{
+			margin-top: 50px;
+			border-radius: 5px;
+		}
+	</style>
+<div align="center">
+	<p class="right">калькулятор для маленьких чисел</p>
+	<p id="atext"></p>	
+</div>	
+	<script>
+	//let x = prompt("Введіть будь-яке значення:", "-3.14");
+	//while (isNaN(x)) {
+	//	x = prompt("Введіть будь-яке значення:", "-3.14");
+ 	//	
+	//}
+	//alert( "Ви ввели число " + x );
+
+	let x = +prompt(`введіть число від -1 до 1 у форматі 0.00`,``);
+	let y = +prompt(`тепер введіть друге число від -1 до 1 у форматі 0.00`,``);
+		if(x>-1 && x<1 && y<1 && y>-1){
+			document.getElementById("atext").innerHTML = `<p class="right">сума чисел = ${(x+y).toFixed(2)}</p>`;
+		}else{
+			document.getElementById("atext").innerHTML = `<p class="wrong">you stupid nig...</p>`;
+		}
+	</script>
+</body>
+</html>

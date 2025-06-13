@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>complimments</title>
+</head>
+<body>
+ <style>
+        body{
+            background-image: url(https://unblast.com/wp-content/uploads/2021/01/Space-Background-Images.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            text-align: center;
+        }
+        .wrong{
+            color: red;
+            font-family: Impact;
+            float: center;
+        }
+        .right{
+            color: limegreen;
+            font-family: Impact;
+            float: center;
+        }
+        div{
+            background-color:rgba(0, 0, 0, 0.7);
+            border:4px solid rgba(130, 73, 245, 0.9);
+            border-radius: 5px;
+            height:auto;
+            width: 500px;
+            margin: auto;
+            margin-top: 15%;
+            text-align: center;
+            font-size: 25px;
+            padding: 1em;
+        }
+    </style>         
+     <script>
+        function compliments(){
+        let compliments=["funny","smart","cool", "genius","clever", "sensible","cheerful","generous","kind","creative","quick-witted","hard-working","determined","optimistic","determined","powerful","black"]
+let animals=["polar bear", "cat","leopard","butterfly","duck","rabbit","ladybug", "monkey","rhino","squirrel","lion","chicken","cow","dog","deer","bird","frisk","nogger"]
+let colors=["red","yellow","blue","green","orange","pink","purple","violet","#84ff73","#a773ff","#ff73f8","#ff7373","#41354d","#f7fc71","#91ffdd"]
+
+let number= +document.compliments.a.value;
+let answer=document.getElementById("answer");
+let string='';
+if(isNaN(number)){
+    string="Ви ввели не число."
+}else{
+        for (i = 1; i <= number; i++){
+
+
+            let rand1=Math.floor(Math.random()*colors.length)
+            let rand2=Math.floor(Math.random()*compliments.length)
+            let rand3=Math.floor(Math.random()*animals.length)
+            
+
+           string+=`<p style='color:${colors[rand1]}'>${i} ) You are as ${compliments[rand2]} as ${animals[rand3]}! </p>`;
+       } }
+
+        answer.innerHTML = string;
+    }    
+    </script>
+  
+    <center><div class="container">
+        <h1 class="right">Make your day better with compliments</h1>
+        <form name="compliments" action="javascript:compliments()"class="right" >
+            How many compliments do you want? <input class="side" name="a" type="text" value="" size="4"><br>
+            <input class="btn" type="submit" value="Submit">
+            <input class="btn" type="reset" name="reset" value="Reset"><br>
+            
+        </form>
+         <span id="answer"></span>
+        </div>
+      </center>
+    
+</body>
+</html>

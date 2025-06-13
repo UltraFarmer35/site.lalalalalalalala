@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>triangleFactorie.com</title>
+	<link rel="icon" href="\SporeIndustries/images/logo.svg">
+</head>
+<body>
+	<style>
+		body{
+			background-image: url(https://unblast.com/wp-content/uploads/2021/01/Space-Background-Images.jpg);
+    		background-size: cover;
+    		background-repeat: no-repeat;
+    		background-attachment: fixed;
+    		text-align: center;
+		}
+		.wrong{
+			color: red;
+			font-family: Impact;
+			float: center;
+		}
+		.right{
+			color: limegreen;
+			font-family: Impact;
+			float: center;
+		}
+		div{
+			background-color:rgba(0, 0, 0, 0.7);
+			border:4px solid rgba(130, 73, 245, 0.9);
+			border-radius: 5px;
+    		height:200px;
+    		width: 350px;
+    		margin: auto;
+    		margin-top: 15%;
+    		text-align: center;
+    		font-size: 25px;
+    		padding: 1em;
+		}
+		.imgM{
+			margin-top: 50px;
+			border-radius: 5px;
+		}
+	</style>
+<div align="center">
+	<p id="atext"></p>	
+</div>	
+	<img class="imgM"src="https://i.chzbgr.com/full/10396845056/hE58CFA67/such-thing-must-inquire-about-this-further-with-my-supervisor-post-haste-guess-doin-circles-now">
+	<script>
+		let a = +prompt("введіть сторону a ","...");
+		let b = +prompt("введіть сторону b ","...");
+		let c = +prompt("введіть сторону c ","...");
+		let P = a+b+c;
+		let p = P/2;
+		let S = Math.sqrt(p*(p-a)*(p-b)*(p-c));
+		if (a<=0 || b<=0 || c<=0 || a+b<=c || a+c<=b || c+b<=a) {
+			document.getElementById("atext").innerHTML = `<p class="wrong">triangle is not exist, you stupid nig...</p>`;
+		}else{			
+			document.getElementById("atext").innerHTML = `<p class="right">Периметр трикутника = ${P},<br>
+					площа трикутника = ${S}.</p>`;
+		}
+	</script>
+</body>
+</html>

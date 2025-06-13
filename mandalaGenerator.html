@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<style>
+		canvas{
+			border:4px solid black;
+		}
+	</style>
+<canvas id="myCanvas" width="1200" height="1200"></canvas>
+<script>
+  const canvas = document.getElementById("myCanvas");
+  const ctx = canvas.getContext("2d");
+  const centerX = canvas.width / 2;
+  const centerY = canvas.height / 2;
+
+  // Запит дати у користувача
+  const input = prompt("Введіть дату народження у форматі ДДММРРРР (наприклад: 23081973):");
+  const digits = input.split('').map(Number);
+
+  // Віддзеркалення числа
+  const fullSequence = digits.concat([...digits].reverse());
+
+  // Кольори (індекс 0 ігнорується або дублює останній колір)
+  const colors = ["#FFFFFF", "red", "orange", "yellow", "green", "cyan", "blue", "purple", "pink", "brown"];
+
+  const rhombSize = 15; // Розмір ромба
+  const steps = 16;     // Кількість ромбів на сторону
+
+  // Функція для малювання ромба
+  function drawRhomb(x, y, angle, color) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(angle);
+    ctx.beginPath();
+    ctx.moveTo(0, -rhombSize);
+    ctx.lineTo(rhombSize, 0);
+    ctx.lineTo(0, rhombSize);
+    ctx.lineTo(-rhombSize, 0);
+    ctx.closePath();
+    ctx.fillStyle = color;
+    ctx.fill();
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  // Малювання одного трикутника
+  function drawTriangle(originX, originY, angleOffset, sequence) {
+    let index = 0;
+
+    for (let row = 0; row < steps; row++) {
+      for (let col = 0; col <= row; col++) {
+        const dx = (col - row / 2) * rhombSize * Math.sqrt(3);
+        const dy = row * rhombSize * 1.5;
+
+        const angle = angleOffset;
+        const rotatedX = dx * Math.cos(angle) - dy * Math.sin(angle);
+        const rotatedY = dx * Math.sin(angle) + dy * Math.cos(angle);
+
+        const colorIndex = sequence[index % sequence.length];
+        drawRhomb(originX + rotatedX, originY + rotatedY, angleOffset, colors[colorIndex]);
+        index++;
+      }
+    }
+  }
+
+  // Малюємо 6 трикутників по колу (обертання на 60°)
+  for (let i = 0; i < 6; i++) {
+    const angle = (Math.PI / 3) * i;
+    drawTriangle(centerX, centerY, angle, fullSequence);
+  }
+</script>
+
+</body>
+</html>

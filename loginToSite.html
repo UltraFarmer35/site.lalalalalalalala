@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>18+Site_for_adults</title>
+	<link rel="icon" href="\SporeIndustries/images/logo.svg">
+</head>
+<body>
+	<style>
+		body{
+			background-image: url(https://unblast.com/wp-content/uploads/2021/01/Space-Background-Images.jpg);
+    		background-size: cover;
+    		background-repeat: no-repeat;
+    		background-attachment: fixed;
+    		text-align: center;
+		}
+		.wrong{
+			color: red;
+			font-family: Impact;
+			float: center;
+		}
+		.right{
+			color: limegreen;
+			font-family: Impact;
+			float: center;
+		}
+		div{
+			background-color:rgba(0, 0, 0, 0.7);
+			border:4px solid rgba(130, 73, 245, 0.9);
+			border-radius: 5px;
+    		height:130px;
+    		width: 350px;
+    		margin: auto;
+    		margin-top: 15%;
+    		text-align: center;
+    		font-size: 25px;
+    		padding: 1em;
+		}
+	</style>
+		<div align="center">
+			<p id="atext"></p>	
+		</div>	
+	<script>
+		let age = +prompt("Цей сайт для дорослих, вкажіть свій вік будь ласка","18-100");
+		if (age >= 18 && age <= 100){
+			document.getElementById("atext").innerHTML = `<p class="right">доступ дозволено</p>`;
+		}else if (age <= 18){
+			document.getElementById("atext").innerHTML = `<p class="wrong">так, школопед, іди уроки вчить, а не на різних сайтах сидіти</p>`;
+		}else if (age >= 100){
+			document.getElementById("atext").innerHTML = `<p class="wrong">ти вже помер, нащо тобі на цей сайт заходити?</p>`;
+		}else{
+			document.getElementById("atext").innerHTML = `<p class="wrong">невірна відповідь</p>`;
+		}
+	</script>
+</body>
+</html>

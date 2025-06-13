@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>title</title>
+	<link rel="icon" href="\SporeIndustries/images/logo.svg">
+</head>
+<body>
+<style>
+        body{
+            background-image: url(https://unblast.com/wp-content/uploads/2021/01/Space-Background-Images.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            text-align: center;
+        }
+        .wrong{
+            color: red;
+            font-family: Impact;
+            float: center;
+        }
+        .right{
+            color: limegreen;
+            font-family: Impact;
+            float: center;
+        }
+        div{
+            background-color:rgba(0, 0, 0, 0.7);
+            border:4px solid rgba(130, 73, 245, 0.9);
+            border-radius: 5px;
+            height:auto;
+            width: 200px;
+            margin: auto;
+            margin-top: 15%;
+            text-align: center;
+            font-size: 25px;
+            padding: 1em;
+        }
+    </style>    
+<div align="center">
+    <p id="demo" class="right"></p>   
+</div>	
+    <script>
+        let text = prompt('введіть будь який текст');
+        let number = +prompt('введіть кількість разів, яку треба вивести');
+        let time = +prompt('введіть час інтервал між виведенням у міліссекундах (1000 мілісекунд = 1 секунді)');
+        const element = document.getElementById("demo");
+        let count=0;
+        function sayHello(){ 
+            count++
+        element.innerHTML += `${count}. ${text}<br>`
+        if (count === number) {
+        clearInterval(timeId);
+    }
+    }
+    let timeId=setInterval(sayHello, time);
+       
+       </script>
+<script>
+//		<canvas id="myCanvas1" width="240" height="240"style="border:1px solid #d3d3d3;">niggggggger</canvas>
+//		let a = document.getElementById("myCanvas1");
+//		let axt = a.getContext("2d");
+//		axt.fillStyle ="#ff0000";
+//		axt.fillRect(0, 0, 200, 200);
+//		axt.fillStyle ="#00ff00";
+//		axt.fillRect(20, 20, 200, 200);
+//		axt.fillStyle ="#0000FF";
+//		axt.fillRect(40, 40, 200, 200);
+//
+//		let canvas = document.getElementById("myCanvas"),
+//cxt = canvas.getContext("2d");
+//cxt.strokeStyle = "red";
+//cxt.fillStyle = "blue";
+//cxt.lineWidth = 6;
+//cxt.strokeRect(50, 40, 100, 100);
+//cxt.fillRect(50, 40, 100, 100);
+	</script>
+</body>
+</html>

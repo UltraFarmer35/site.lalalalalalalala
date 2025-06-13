@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>emogies</title>
+	<link rel="icon" href="\SporeIndustries/images/logo.svg">
+</head>
+<body>
+    <style>
+		body{
+			background-image: url(https://unblast.com/wp-content/uploads/2021/01/Space-Background-Images.jpg);
+    		background-size: cover;
+    		background-repeat: no-repeat;
+    		background-attachment: fixed;
+    		text-align: center;
+		}
+		.wrong{
+			color: red;
+			font-family: Impact;
+			float: center;
+		}
+		.right{
+			color: limegreen;
+			font-family: Impact;
+			float: center;
+		}
+		div{
+			background-color:rgba(0, 0, 0, 0.7);
+			border:4px solid rgba(130, 73, 245, 0.9);
+			border-radius: 5px;
+    		height:auto;
+    		width: 200px;
+    		margin: auto;
+    		margin-top: 15%;
+    		text-align: center;
+    		font-size: 25px;
+    		padding: 1em;
+		}
+	</style>	
+  <div align="center" id="atext">	
+</div>  
+<script>
+    let min = +prompt("Start emogi number:", "128512");
+    let max = +prompt("Finish emogi number:", "128555");
+    let output = "";
+
+    for (let i = min; i <= max; i++) {
+        output += `<p class="right">&`+i+`;`+`&#`+i+`</p>`;
+    }
+
+    document.getElementById("atext").innerHTML = output;
+</script>
+
+</body>
+</html>

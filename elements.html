@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<style>
+		body{
+			background-image: url(https://unblast.com/wp-content/uploads/2021/01/Space-Background-Images.jpg);
+    		background-size: cover;
+    		background-repeat: no-repeat;
+    		background-attachment: fixed;
+    		text-align: center;
+		}
+		.wrong{
+			color: red;
+			font-family: Impact;
+			float: center;
+		}
+		.right{
+			color: limegreen;
+			font-family: Impact;
+			float: center;
+		}
+		div{
+			background-color:rgba(0, 0, 0, 0.7);
+			border:4px solid rgba(130, 73, 245, 0.9);
+			border-radius: 5px;
+    		height:auto;
+    		width: 500px;
+    		margin: auto;
+    		margin-top: 15%;
+    		text-align: center;
+    		font-size: 25px;
+    		padding: 1em;
+		}
+	</style>	
+<div align="center">
+	<p class="right">цей атом відноситься до</p><p id="demo"></p>
+	<p id="atext" class="right"></p>
+	<p id="btext" class="right"></p>	
+</div>	
+	
+	<script>
+		let Celement = prompt("ведіть назву хімічного елементу,<br>(вводити назву українською, з малої літери)","...");
+		switch(Celement){
+			case "гідроген":
+			case "літій":
+			case "натрій":
+			case "калій":
+			case "купрум":
+			case "рубідій":
+			case "аргентум":
+			case "цезій":
+			case "аурум":
+			case "францій":
+			case "рентгеній":
+				text=`<p class="right">1 групи.</p>`; 
+			break;
+			case "берилій":
+			case "магній":
+			case "кальцій":
+			case "цинк":
+			case "стронцій":
+			case "кадмій":
+			case "барій":
+			case "меркурій":
+			case "радій":
+			case "коперницій":
+				text=`<p class="right">2 групи.</p>`;
+			break;
+			case "бор":
+			case "алюміній":
+			case "скандій":
+			case "галій":
+			case "ітрій":
+			case "індій":
+			case "лантан":
+			case "талій":
+			case "актиній":
+			case "ніхоній":
+				text=`<p class="right">3 групи.</p>`;
+			break;
+			case "карбон":
+			case "сицилій":
+			case "титан":
+			case "германій":
+			case "цирконій":
+			case "станум":
+			case "гафній":
+			case "плюмбум":
+			case "резерфордій":
+			case "флероній":
+				text=`<p class="right">4 групи.</p>`;
+			break;
+			case "нітроген":
+			case "фосфор":
+			case "ванадій":
+			case "арсен":
+			case "ніобій":
+			case "стибій":
+			case "тантал":
+			case "бісмут":
+			case "дубній":
+			case "московій":
+				text=`<p class="right">5 групи.</p>`;
+			break;
+			case "оксиген":
+			case "сульфур":
+			case "хром":
+			case "селен":
+			case "молібден":
+			case "телур":
+			case "вольфрам":
+			case "полоній":
+			case "сиборгій":
+			case "лівермодій":
+				text=`<p class="right">6 групи.</p>`;
+			break;
+			case "флуор":
+			case "хлор":
+			case "манган":
+			case "бром":
+			case "технецій":
+			case "іод":
+			case "реній":
+			case "астат":
+			case "борій":
+			case "теннесій":
+				text=`<p class="right">7 групи.</p>`;
+			break;
+			case "гелій":
+			case "неон":
+			case "аргон":
+			case "ферум":
+			case "криптон":
+			case "рутеній":
+			case "ксенон":
+			case "осмій":
+			case "радон":
+			case "гасій":
+			case "оганессій":
+			case "кобальд":
+			case "родій":
+			case "іридій":
+			case "майтнерій":
+			case "нікол":
+			case "паладій":
+			case "платина":
+			case "дармштадій":
+				text=`<p class="right">8 групи.</p>`;
+			break;
+		default:
+			text=`<p class="wrong">ні до якої групи, бо ти допустився помилки у написанні назви, або цього атома ще не існує.</p>`; 
+		}
+		document.getElementById("demo").innerHTML = text;
+	</script>
+</body>
+</html>
